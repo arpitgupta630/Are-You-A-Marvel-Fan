@@ -24,7 +24,7 @@ function quiz(question, answer) {
 
 let questionList = [
     {
-        question: 'Find which character is not in Marvel?\n\ta). Ironman.\n\tb). Captain America.\n\tc). Batman\n\td).Thor',
+        question: 'Find which character is not in Marvel?\n\ta). Ironman.\n\tb). Captain America.\n\tc). Batman\n\td). Thor',
         answer: 'c'
     },
     {
@@ -45,3 +45,32 @@ let questionList = [
     }
 ]
 
+for (let i=0; i<questionList.length; i++){
+    quiz(questionList[i].question, questionList[i].answer)
+    console.log('-----------------------------------------------------------------------');
+}
+
+let highScore = [
+    {
+        name: 'Arpit',
+        score: 10
+    },
+    {
+        name: 'Nitin',
+        score: 7
+    },
+]
+
+if (score < 8){
+    console.log('\nYour Final Score is:', score, 'Out of 10');
+    console.log('Sorry, You are not a True Fan');
+} else{
+    console.log('\nYour Final Score is:', score, 'Out of 10');
+    console.log('Amazing,', userName, 'You are really a True Fan of Marvel Cinematic Universe.');
+}
+
+console.log('\n:Scoreboard:');
+for (let i=0; i<highScore.length; i++){
+    console.log(highScore[i].name+':', highScore[i].score);
+}
+console.log(userName+':', score, '\n');
