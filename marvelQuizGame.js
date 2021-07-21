@@ -2,7 +2,7 @@ let readlineSync = require('readline-sync');
 let chalk = require('chalk')
 
 console.log(chalk.blue('Jarvis:'),'What is your Name?');
-let userName = readlineSync.question(chalk.green('You: '));
+let userName = readlineSync.question(chalk.greenBright('You: '));
 
 console.log(chalk.blue('\nJarvis:'), 'Hello',userName, '\b, Welcome to Marvel Quiz Gam? (A Fun-Quiz Game.)');
 
@@ -13,7 +13,7 @@ console.log(chalk.magenta('\n-----:RULES:-----'),'\n1. Right Answer will increas
 
 function quiz(question, answer) {
     console.log(chalk.blue('\nJarvis:'), question);
-    let userAnswer = readlineSync.question(chalk.green(userName) + ': ');
+    let userAnswer = readlineSync.question(chalk.greenBright(userName) + ': ');
     if (userAnswer === answer){
         score = score + 2;
         console.log('Bravo!!!', userName,'\b,' + chalk.green(' Right Answer') + '\nNew Score:', score);
