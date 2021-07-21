@@ -1,9 +1,10 @@
 let readlineSync = require('readline-sync');
+let chalk = require('chalk')
 
-console.log('Jarvis: What is your Name?');
-let userName = readlineSync.question('You: ');
+console.log(chalk.blue('Jarvis:'),'What is your Name?');
+let userName = readlineSync.question(chalk.green('You: '));
 
-console.log('\nJarvis: Hello',userName, '\b, Welcome to Marvel Quiz Gam? (A Fun-Quiz Game.)');
+console.log(chalk.blue('\nJarvis:'), 'Hello',userName, '\b, Welcome to Marvel Quiz Gam? (A Fun-Quiz Game.)');
 
 let score = 0
 console.log('Initial Score:', score);
@@ -11,14 +12,14 @@ console.log('Initial Score:', score);
 console.log('\n:RULES:\n1. Right Answer will increase 2 Marks and Worng Answer will deducte 1 Mark.\n2. Case Sensitive Input.\n3. These are Multiple Choice Question Only Answer in a b c d');
 
 function quiz(question, answer) {
-    console.log('\nJarvis:', question);
-    let userAnswer = readlineSync.question(userName + ': ');
+    console.log(chalk.blue('\nJarvis:'), question);
+    let userAnswer = readlineSync.question(chalk.green(userName) + ': ');
     if (userAnswer === answer){
         score = score + 2;
-        console.log('Bravo!!!', userName,'\b, Right Answer \nNew Score:', score);
+        console.log('Bravo!!!', userName,'\b,' + chalk.green(' Right Answer') + '\nNew Score:', score);
     } else{
         score--;
-        console.log('Oops!!! Worng Answer\nNew Score:', score);
+        console.log('Oops!!!' +  chalk.red(' Worng Answer') + '\nNew Score:', score);
     }
 }
 
