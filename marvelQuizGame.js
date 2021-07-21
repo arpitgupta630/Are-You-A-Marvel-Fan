@@ -9,7 +9,7 @@ console.log(chalk.blue('\nJarvis:'), 'Hello',userName, '\b, Welcome to Marvel Qu
 let score = 0
 console.log('Initial Score:', score);
 
-console.log('\n:RULES:\n1. Right Answer will increase 2 Marks and Worng Answer will deducte 1 Mark.\n2. Case Sensitive Input.\n3. These are Multiple Choice Question Only Answer in a b c d');
+console.log(chalk.magenta('\n-----:RULES:-----'),'\n1. Right Answer will increase 2 Marks and Worng Answer will deducte 1 Mark.\n2. Case Sensitive Input.\n3. These are Multiple Choice Question Only Answer in a b c d');
 
 function quiz(question, answer) {
     console.log(chalk.blue('\nJarvis:'), question);
@@ -19,7 +19,7 @@ function quiz(question, answer) {
         console.log('Bravo!!!', userName,'\b,' + chalk.green(' Right Answer') + '\nNew Score:', score);
     } else{
         score--;
-        console.log('Oops!!!' +  chalk.red(' Worng Answer') + '\nNew Score:', score);
+        console.log('Oops!!!' +  chalk.redBright(' Worng Answer') + '\nNew Score:', score);
     }
 }
 
@@ -70,7 +70,7 @@ if (score < 8){
     console.log('Amazing,', userName, 'You are really a True Fan of Marvel Cinematic Universe.');
 }
 
-console.log('\n:Scoreboard:');
+console.log(chalk.green('\n:Scoreboard:'));
 for (let i=0; i<highScore.length; i++){
     console.log(highScore[i].name+':', highScore[i].score);
 }
